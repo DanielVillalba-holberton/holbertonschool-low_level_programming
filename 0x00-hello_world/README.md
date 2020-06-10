@@ -1,0 +1,1 @@
+# This project talk about C, printf, puts, and variables
