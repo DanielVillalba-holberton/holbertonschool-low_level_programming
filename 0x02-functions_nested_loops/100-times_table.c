@@ -26,11 +26,13 @@ void print_times_table(int n)
 				n3 = sum % 10;
 				if (sum < 10)
 				{
+					_putchar(' ');					
 					_putchar(' ');
 					_putchar(sum + '0');
 				}
 				else if (sum >= 10 && sum < 100)
 				{
+					_putchar(' ');					
 					_putchar(n2 + '0');
 					_putchar(n3 + '0');
 				}
