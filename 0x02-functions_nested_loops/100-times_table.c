@@ -7,9 +7,9 @@
  */
 void print_times_table(int n)
 {
-	int row, col, sum, t, n1, n2, n3;
-
-	if (n >= 0 && n < 16)
+	int row, col, sum, n4, n1, n2, n3;
+	
+	if(n >= 0 && n < 16)
 	{
 		col = 0;
 		while (col <= n)
@@ -21,24 +21,24 @@ void print_times_table(int n)
 				_putchar(',');
 				_putchar(' ');
 				sum = col * row;
-				t = sum / 10;
+				n1 = (sum / 10) / 10;
+				n2 = (sum / 10) % 10;
+				n3 = sum % 10;
+				n4 = sum / 10;
 				if (sum < 10)
 				{
 					_putchar(' ');
 					_putchar(sum + '0');
 				}
-				else if (sum >= 10 && sum < 100)
+				else if (sum >=10 && sum <100)
 				{
-					_putchar(t + '0');
-					_putchar(sum % 10 + '0');
+					_putchar(n4 + '0');
+					_putchar(n3 + '0');
 				}
 				else
 				{
-					n1 = (sum / 10) / 10;
 					_putchar(n1 + '0');
-					n2 = (sum / 10) % 10;
 					_putchar(n2 + '0');
-					n3 = sum % 10;
 					_putchar(n3 + '0');
 				}
 				row++;
@@ -47,4 +47,5 @@ void print_times_table(int n)
 			col++;
 		}
 	}
+	
 }
