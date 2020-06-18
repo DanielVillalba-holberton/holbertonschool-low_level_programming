@@ -9,7 +9,7 @@ int main(void)
 {
 	int i = 1;
 
-	while (i <= 100)
+	for (i; i <= 100; ++i)
 	{
 		if (i % 3 == 0)
 		{
@@ -27,7 +27,6 @@ int main(void)
 		{
 			printf("%i", i);
 		}
-		++i;
 		if (i != 100)
 		{
 			putchar(' ');
