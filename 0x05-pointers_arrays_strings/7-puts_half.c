@@ -1,5 +1,4 @@
 #include "holberton.h"
-#include <stdio.h>
 /**
  * puts_half - printf the second half of an array.
  * @str: array parser
