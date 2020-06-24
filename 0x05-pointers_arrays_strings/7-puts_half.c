@@ -11,13 +11,11 @@ void puts_half(char *str)
 
 	while (str[i] != 0)
 		i++;
-	printf("%d\n", i);
 	if (i % 2 == 0)
 	{
 		for (j = i / 2; j < i; j++)
 		{
 			_putchar(str[j]);
-			printf("j: %d\n", j);
 		}
 	}
 	else if (i % 2 != 0)
@@ -25,7 +23,6 @@ void puts_half(char *str)
 		for (k = i / 2 + 1; k < i; k++)
 		{
 			_putchar(str[k]);
-			printf("k: %d\n", k);
 		}
 	}
 }
