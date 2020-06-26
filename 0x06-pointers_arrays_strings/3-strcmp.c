@@ -15,10 +15,9 @@ int _strcmp(char *s1, char *s2)
 	while (s2[j] != '\0')
 		j++;
 	if (i < j)
-		r = -15;
+		return (-15);
 	else if (i == j)
-		r = 0;
+		return (0);
 	else
-		r = 15;
-	return (r);
+		return(15);
 }
