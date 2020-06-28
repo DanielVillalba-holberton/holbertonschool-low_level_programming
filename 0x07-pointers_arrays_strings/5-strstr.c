@@ -1,3 +1,4 @@
+  
 #include "holberton.h"
 #include <stdio.h>
 
@@ -20,7 +21,6 @@ char *_strstr(char *haystack, char *needle)
 			for (j = 0; needle[j]; j++)
 				if (needle[j] == haystack[i])
 					c++;
-					break;
 		}
 		if (c != 0)
 		{
