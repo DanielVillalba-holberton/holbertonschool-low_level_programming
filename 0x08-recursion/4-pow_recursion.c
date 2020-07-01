@@ -9,7 +9,7 @@ int _pow_recursion(int base, int pow)
 {
 	if (pow < 0)
 		return (-1);
-	if (pow == 0)
+	else if (pow == 0)
 		return (1);
-	return (pow * _pow_recursion(base, pow - 1));
+	return (base * _pow_recursion(base, pow - 1));
 }
