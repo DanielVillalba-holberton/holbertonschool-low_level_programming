@@ -8,13 +8,17 @@
  */
 int main(int argc, char *argv[])
 {
-    int mul;
-    if (argc == 1 || argc > 3)
+    int mul = 1, i = 1;
+    if (argc > 3 || argc < 3)
     {
         printf("Error\n");
         return (1);
     }
-    mul = atoi(argv[1]) * atoi(argv[2]);
+    while (argv[i])
+    {
+        mul = mul * atoi(argv[i]);
+        i++;
+    }
     printf("%i\n", mul);
     return (0);
 }
