@@ -8,17 +8,18 @@
  */
 int main(int argc, char *argv[])
 {
-    int mul = 1, i = 1;
-    if (argc > 3 || argc < 3)
-    {
-        printf("Error\n");
-        return (1);
-    }
-    while (argv[i])
-    {
-        mul = mul * atoi(argv[i]);
-        i++;
-    }
-    printf("%i\n", mul);
-    return (0);
+	int mul = 1, i = 1;
+
+	if (argc > 3 || argc < 3)
+	{
+		printf("Error\n");
+		return (1);
+	}
+	while (argv[i])
+	{
+		mul = mul * atoi(argv[i]);
+		i++;
+	}
+	printf("%i\n", mul);
+	return (0);
 }
