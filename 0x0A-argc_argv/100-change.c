@@ -11,6 +11,7 @@ int main(int argc, char *argv[])
 {
 	int i = 0, ch;
 
+    fflush(stdin);
 	ch = atoi(argv[1]);
 	if (argc != 2)
 	{
