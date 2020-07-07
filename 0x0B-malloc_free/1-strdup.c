@@ -15,7 +15,7 @@ char *_strdup(char *str)
 		return (0);
 	while (str[c] != 0)
 		c++;
-    c++;
+	c++;
 	array = (char *)malloc(sizeof(char) * c);
 	if (array == 0)
 		return (array);
