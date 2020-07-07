@@ -9,13 +9,12 @@
 char *_strdup(char *str)
 {
 	char *array;
-	unsigned int i, c = 0;
+	unsigned int i, c = 1;
 
 	if (str == 0)
 		return (0);
 	while (str[c] != 0)
 		c++;
-	c++;
 	array = (char *)malloc(sizeof(char) * c);
 	if (array == 0)
 		return (array);
