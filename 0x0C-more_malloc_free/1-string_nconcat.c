@@ -4,7 +4,7 @@
  * string_nconcat - allocates memory using malloc
  * @s1: string 1
  * @s2: string 2
- * n: bytes
+ * @n: bytes
  * Return: pointer to array
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
@@ -31,7 +31,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		array[i] = s1[i];
 		i++;
 	}
-	while (j < len2)
+	while (j < n)
 	{
 		array[i] = s2[j];
 		i++;
