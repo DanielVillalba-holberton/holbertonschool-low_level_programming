@@ -1,3 +1,4 @@
+#include "function_pointers.h"
 /**
  * print_name - prints a name calls another function
  * @name: pointer to name string
