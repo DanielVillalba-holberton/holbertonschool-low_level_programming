@@ -19,20 +19,20 @@ int op_sub(int a, int b)
 {
 	return (a - b);
 }
- /**
- * op_mul - multiplication of a and b
- * @a: first number
- * @b: second number
+/**
+ * op_mul - multiplies of two numbers
+ * @a: integer
+ * @b: integer
  * Return: result
  */
 int op_mul(int a, int b)
 {
 	return (a * b);
 }
- /**
- * op_div - divides two numbers
- * @a: first number
- * @b: second number
+/**
+ * op_div - division of two numbers
+ * @a: integer
+ * @b: integer
  * Return: result
  */
 int op_div(int a, int b)
