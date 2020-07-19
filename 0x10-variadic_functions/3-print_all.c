@@ -1,49 +1,86 @@
 #include "variadic_functions.h"
 #include <stdio.h>
+#include <stdlib.h>
 /**
- * print_all - writes char in the buffer
- * @format: format to be print
- * Return: nthing
+ * print_char - prints char
+ * @argument: argument
+ *
+ * Return: void
+ */
+void print_char(va_list argument)
+{
+	printf("%c", va_arg(argument, int));
+}
+/**
+ * print_integer - prints integers
+ * @argument: argument
+ *
+ * Return: void
+ */
+void print_integer(va_list argument)
+{
+	printf("%i", va_arg(argument, int));
+}
+/**
+ * print_float - prints float
+ * @argument: argument
+ * Return: void
+*/
+void print_float(va_list argument)
+{
+	printf("%f", va_arg(argument, double));
+}
+/**
+ * print_string - prints string
+ * @argument: argument
+ * Return: void
+ */
+void print_string(va_list argument)
+{
+	char *string = va_arg(argument, char *);
+
+	if (string == '\0')
+	{
+		printf("(nil)");
+	}
+	printf("%s", string);
+}
+/**
+ * print_all - print all formats
+ * @format: format
+ *
+ * Return: void
  */
 void print_all(const char * const format, ...)
 {
-	va_list arguments;
-	char *aux;
-	int i = 0, end;
+	ope_str options[] = {
+		{"c", print_char},
+		{"i", print_integer},
+		{"f", print_float},
+		{"s", print_string},
+		{'\0', NULL}
+	};
 
-	while (format && format[i])
+	int i;
+	char *pointer = (char *) format;
+	char *sep = "";
+	va_list arguments;
+
+	va_start(arguments, format);
+
+	while (format != '\0' && *pointer != '\0')
 	{
-		va_start(arguments, format);
-		while (format[i])
+		for (i = 0; options[i].oper != '\0'; i++)
 		{
-			end = 0;
-			switch (format[i++])
+			if (options[i].oper[0] == *pointer)
 			{
-				case 'c':
-					printf("%c", va_arg(arguments, int));
-					break;
-				case 'i':
-					printf("%d", va_arg(arguments, int));
-					break;
-					case 's':
-					aux = va_arg(arguments, char*);
-					if (aux)
-					{
-						printf("%s", aux);
-						break;
-					}
-					printf("(nil");
-					break;
-				case 'f':
-					printf("%f", va_arg(arguments, double));
-				default:
-					end = 1;
-					break;
+				printf("%s", sep);
+				options[i].func(arguments);
+				sep = ", ";
 			}
-			if (format[i] && !end)
-				printf(", ");
 		}
-		va_end(arguments);
+		pointer++;
 	}
+	va_end(arguments);
 	printf("\n");
 }
