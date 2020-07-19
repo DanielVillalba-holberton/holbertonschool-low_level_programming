@@ -70,7 +70,8 @@ void print_all(const char * const format, ...)
 
 	while (format != '\0' && *pointer != '\0')
 	{
-		for (i = 0; options[i].oper != '\0'; i++)
+		i = 0;
+		while (options[i].oper != '\0')
 		{
 			if (options[i].oper[0] == *pointer)
 			{
@@ -78,6 +79,7 @@ void print_all(const char * const format, ...)
 				options[i].func(arguments);
 				sep = ", ";
 			}
+			i++;
 		}
 		pointer++;
 	}
