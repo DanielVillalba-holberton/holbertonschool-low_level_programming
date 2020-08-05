@@ -24,7 +24,7 @@ int main(int argc, char **argv)
 		exit(98);
 	}
 
-	fd_to = open(file_to, O_CREAT | O_WRONLY, O_TRUNC, 0664);
+	fd_to = open(file_to, O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	if (fd_to == -1)
 	{
 		if (close(fd_from) == -1)
