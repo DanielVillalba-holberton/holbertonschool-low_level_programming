@@ -22,7 +22,6 @@ hash_node_t *create_node(const char *value, const char *key)
 		free(newNode);
 		return (NULL);
 	}
-	newNode->next = NULL;
 	return (newNode);
 }
 /**
@@ -37,7 +36,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	unsigned long int index;
 	hash_node_t *newNode = NULL, *temp = NULL, *node_n = NULL;
 
-	if (strcmp(key, "") == 1)
+	if (ht == NULL || ht->array == NULL || !value || !key || strlen(key) == 0)
 		return (0);
 
 	index = key_index((const unsigned char *) key, ht->size);
