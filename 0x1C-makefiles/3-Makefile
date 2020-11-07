@@ -1,0 +1,26 @@
+CC = gcc
+SRC = holberton.c main.c
+OBJ = $(patsubst %.c,%.o,$(SRC))
+NAME = holberton
+RM = rm -f
+
+all: $(OBJ)
+	$(CC) $(OBJ) -o $(NAME)
+
+clean:
+ifneq ("$(wilcard *~)","")
+	$(RM) *~
+endif
+ifneq ("$(wildcard $(NAME))","")
+	$(RM) $(NAME)
+endif
+
+oclean:
+ifneq ("$(wildcard $(OBJ))","")
+	$(RM) $(OBJ)
+endif
+
+fclean: clean oclean
+
+re: fclean all
+
