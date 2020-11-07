@@ -1,3 +1,4 @@
+# makefile to builds a executable and deletes files
 CC = gcc
 SRC = holberton.c main.c
 OBJ = $(patsubst %.c,%.o,$(SRC))
